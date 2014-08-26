@@ -299,7 +299,7 @@ def main():
                         });
                     }
 
-                    map.legend = {
+                    /*map.legend = {
                           width: 150,
                           backgroundAlpha: 0.5,
                           backgroundColor: "#FFFFFF",
@@ -320,7 +320,7 @@ def main():
                           title: "low",
                           color: "#66CC99"}
                           ]
-                    };
+                    };*/
 
                     map.valueLegend = {
                         right: 10,
@@ -343,6 +343,10 @@ def main():
     """
     am_maaps_html = am_maaps_html % (''.join(latlonData), ','.join(mapData), mapHeading, mapSubHeading, areas_heatmap )
 
+    logger.info("Maps html file generated @ map.html")
+    f = open('map.html', 'w')
+    f.write(am_maaps_html)
+    f.close()
 
     """
     end of main function
